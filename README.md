@@ -1,0 +1,2 @@
+# SingleWebPage
+Single Web Page with an automatic slider in the header and thumbnails, which is run by a script that will make the appropriate thumbnail for any series of sliders, no matter how abundant its content, and automatically display the desired slide. In the next section, there are shopping carts that are displayed differently for different screen sizes. There is also a footer. Scss was used.
