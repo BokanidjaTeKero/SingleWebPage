@@ -2,11 +2,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css"> 
     <link rel="stylesheet" href="/dist/style.css">
+
+
     <title>test</title>
 </head>
 <body>
     <header>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <img class="swiper-slide" src="/img/sliderMainImg.png" alt="img">
+                <img class="swiper-slide" src="/img/sliderMainImg.png" alt="img">
+                <img class="swiper-slide" src="/img/sliderMainImg.png" alt="img">
+                <img class="swiper-slide" src="/img/sliderMainImg.png" alt="img">
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
         <div class="header-card">
             <div class="card-content">
                 <div class="card-txt-description"></div>
@@ -14,24 +30,18 @@
                 <div class="card-txt-border"></div>
                 <div class="card-txt-reduction"></div>
             </div>
-            <button class="header-card-content-btn"></button>
-        </div>
-        <div id="sliderContainer">
-            <div id="sliderContent"></div>
-            <div class="sliderControls">
-                <div id="radioControls" class="radioBtnControls"></div>
-            </div>
+            <button class="header-card-content-btn">shop now</button>
         </div>
     </header>
     <main>
         <div class="main-header">
             <div class="main-title">
-                <div class="dot-star"></div>
-                <div class="main-title-txt"></div>
-                <div class="dot-star"></div>
+                <h3>HandPicked</h3>
             </div>
         </div>
+    
         <div class="main-cards-container">
+            
             <div class="main-cards-short-container">
                 <div class="card-small first-card-item">
                     <div class="card-small-content">
@@ -44,11 +54,15 @@
                     </div>
                 </div>
             </div>
+        
+            
             <div class="main-cards-long-card long-card-item">
                 <div class="long-card-content">
                     <button class="card-content-btn"></button>
                 </div>
             </div>
+        
+            
             <div class="main-cards-short-container">
                 <div class="card-small third-card-item">
                     <div class="card-small-content">
@@ -61,37 +75,62 @@
                     </div>
                 </div>
             </div>
-        </div>
+        
+
     </main>
     <section class="footer-heading">
-        <div class="main-header footer-header">
+        <div class="main-header">
             <div class="main-title">
-                <div class="dot-star"></div>
-                <div class="main-title-txt footer-txt"></div>
-                <div class="dot-star"></div>
+                <h3>Customer Says</h3>
             </div>
         </div>
     </section>
     <footer>
-        <div class="footer-bg">
+        <div class="triangle"></div>
+        <div class="customer-container">
             <div class="customer">
                 <div class="customer-img"></div>
                 <div class="customer-info">
-                    <div class="customer-subtitle"></div>
-                    <div class="customer-title"></div>
-                    <div class="customer-job"></div>
+                    <p class="customer-subtitle">
+                        Set ut perspicatis<br>
+                        unde omnis iste natus error sit <br> 
+                        voluptatem accusantium doloremque
+                    </p>
+                    <h3 class="customer-title">Sandra DewiSa</h3>
+                    <p class="customer-job">fashion stylish</p>
                 </div>
             </div>
-            <div class="customer customer-right">
+            <div class="customer">
                 <div class="customer-img"></div>
                 <div class="customer-info">
-                    <div class="customer-subtitle"></div>
-                    <div class="customer-title"></div>
-                    <div class="customer-job"></div>
+                    <p class="customer-subtitle">
+                        Set ut perspicatis<br>
+                        unde omnis iste natus error sit <br> 
+                        voluptatem accusantium doloremque
+                    </p>
+                    <h3 class="customer-title">Shaheer Sheikh</h3>
+                    <p class="customer-job">designer</p>
                 </div>
             </div>
         </div>
     </footer>
-    <script src="/dist/app.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        });
+    </script>
 </body>
 </html>

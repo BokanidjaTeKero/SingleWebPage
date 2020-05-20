@@ -36,6 +36,12 @@
     align-items: flex-start;
 }
 
+@mixin flexSpArCenter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 //img
 @mixin bgCenterNoRep {
     background-position: center;
@@ -52,6 +58,14 @@
     background-repeat: no-repeat;
 }
 
+@mixin cssTricks {
+    background: no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 //responsive
 @mixin mQ($arg...){
     @if length($arg) == 1{
@@ -66,46 +80,66 @@
     }
 }
 
+//bullet
+@mixin bullet{
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    border-radius: 0;
+    background: #000;
+    opacity: .2;
+    transform: rotate(45deg);
+}
+
 //section title
 @mixin sectionTitle{
     .main-header {
+        text-align: center;
         width: 100%;
-        height: 26px;
-        @include flexCenterCenter;
+        height: 30px;
+        vertical-align: baseline;
     }
     .main-title {
-        width: 500px;
-        height: 24px;
-        @include flexSpBeetCenter;
-        flex-direction: row;
-        &:before,&:after{
-            background-color: #eaeaea;
-            content: "";
-            display: inline-block;
-            height: 1px;
-            position: relative;
-            vertical-align: middle;
-            width: 125%;
-        }
-        &:before {
-            right: 0.5em;
-            margin-left: -123.5%;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        &:before,
+        &:after {
+            content: '';
+            border-top: 1px solid #eaeaea;
+            margin: 0 100px 0 0;
+            flex: 1 0 20px;
         }
         &:after {
-            left: 0.5em;
-            margin-right: -123.5%;
+            margin: 0 0 0 100px;
+        }
+        h3 {
+        color: #000000;
+        font-family: "Playfair Display";
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 17.76px;
+            &:before,&:after{
+                content: "";
+                @include bullet;
+                background-color: #d9bf8f;
+                opacity: 1;
+                display: inline-block;
+                position: relative;
+            }
+            &:before {
+                right: 30px;
+                margin-left: -123.5%;
+            }
+            &:after {
+                left: 30px;
+                margin-right: -123.5%;
+            }
         }
     }
-    .dot-star {
-        width: 20px;
-        height: 20px;
-        margin: 9px;
-        background-image: url('/img/thumbGold.png');
-        @include bgCenterSizeCover;
-    }
-    .main-title-txt {
-        width: 171px;
-        height: 24px;
-        background-image: url('/img/sectionCardHeder.png');
-    }
 }
+    
